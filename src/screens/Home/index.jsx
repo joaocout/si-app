@@ -1,68 +1,11 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TextInput, FlatList } from "react-native";
+import { View, Text, TextInput, FlatList } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
-const colors = {
-  purple: "#3D345E",
-  blue: "#4BA0FE",
-  lightBlue: "#E7F6FE",
-  dimBlue: "#89A1BC",
-  gray: "#808080",
-  red: "#C0392B",
-  green: "#00B16A",
-};
+import colors from "../../shared/colors";
+import styles from "./styles";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    paddingHorizontal: 32,
-  },
-
-  title: {
-    fontSize: 28,
-    fontWeight: "700",
-    color: colors.purple,
-    marginTop: 60,
-  },
-
-  subtitle: {
-    marginTop: 16,
-    fontSize: 14,
-    fontWeight: "300",
-    color: colors.purple,
-  },
-
-  searchBoxContainer: {
-    marginTop: 16,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  searchBox: {
-    flex: 1,
-    borderColor: colors.blue,
-    borderWidth: 1,
-    borderRadius: 30,
-    height: 40,
-    color: colors.purple,
-    paddingLeft: 40,
-    paddingRight: 12,
-    fontSize: 14,
-    fontWeight: "400",
-  },
-
-  searchIcon: {
-    left: 12,
-    position: "absolute",
-  },
-
-  list: {
-    marginHorizontal: -32,
-    paddingHorizontal: 32,
-  },
-});
+import CourseCard from "../../components/CourseCard";
 
 const courses = [
   {
@@ -130,38 +73,5 @@ const Home = () => {
     </View>
   );
 };
-
-const courseStyles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.lightBlue,
-    borderRadius: 10,
-    marginTop: 18,
-    paddingHorizontal: 16,
-    height: 130,
-    paddingVertical: 14,
-  },
-
-  title: {
-    fontSize: 18,
-    fontWeight: "600",
-    color: colors.purple,
-  },
-
-  description: {
-    fontSize: 14,
-    fontWeight: "300",
-    color: colors.gray,
-  },
-});
-
-const CourseCard = ({ course }) => (
-  <View style={courseStyles.container}>
-    <Text style={courseStyles.title}>
-      {`${course.id}. `}
-      {course.title}
-    </Text>
-    <Text>{course.description}</Text>
-  </View>
-);
 
 export default Home;
