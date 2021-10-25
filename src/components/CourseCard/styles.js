@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     elevation: 5,
     marginHorizontal: 32,
+    overflow: "hidden",
   },
 
   title: {
@@ -23,6 +24,26 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "300",
     color: colors.gray,
+    marginBottom: 25,
+  },
+
+  bottomBox: {
+    paddingVertical: 5,
+    paddingHorizontal: 8,
+    backgroundColor: colors.blue,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "space-between",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    position: "absolute",
+  },
+
+  bottomBoxTextContainer: {
+    color: "white",
+    maxWidth: "75%",
   },
 });
 

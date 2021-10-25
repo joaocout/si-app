@@ -1,6 +1,6 @@
 /* eslint-disable react/style-prop-object */
 import React from "react";
-import { StatusBar } from "expo-status-bar";
+import { StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { registerRootComponent } from "expo";
 
@@ -9,7 +9,7 @@ import Routes from "./navigation";
 const App = () => (
   <NavigationContainer>
     <Routes />
-    <StatusBar style="auto" />
+    <StatusBar barStyle="default" />
   </NavigationContainer>
 );
 
