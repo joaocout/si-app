@@ -59,7 +59,7 @@ const Home = () => {
         <FontAwesome
           style={styles.searchIcon}
           name="search"
-          size={24}
+          size={18}
           color={colors.blue}
         />
       </View>
