@@ -20,7 +20,7 @@ const LessonCard = ({ lesson }) => {
       <View style={styles.textContainer}>
         <Text style={styles.title}>{lesson.title}</Text>
         <Text style={styles.subTitle}>
-          {lesson.completed}/10 Tarefas finalizadas
+          {lesson.completed}/{lesson.total} Tarefas finalizadas
         </Text>
       </View>
       <AntDesign

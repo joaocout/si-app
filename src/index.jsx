@@ -4,12 +4,15 @@ import { StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { registerRootComponent } from "expo";
 
+import Store from "./shared/state";
 import Routes from "./navigation";
 
 const App = () => (
   <NavigationContainer>
-    <Routes />
-    <StatusBar barStyle="default" />
+    <Store>
+      <Routes />
+      <StatusBar barStyle="default" />
+    </Store>
   </NavigationContainer>
 );
 
