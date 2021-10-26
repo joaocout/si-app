@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, FlatList } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import { useFonts, Raleway_600SemiBold, Raleway_700Bold } from "@expo-google-fonts/raleway";
-import { Montserrat_300Light, Montserrat_400Regular } from "@expo-google-fonts/montserrat";
+import {
+  useFonts,
+  Raleway_600SemiBold,
+  Raleway_700Bold,
+} from "@expo-google-fonts/raleway";
+import {
+  Montserrat_300Light,
+  Montserrat_400Regular,
+} from "@expo-google-fonts/montserrat";
 
 import colors from "../../shared/colors";
 import styles from "./styles";
@@ -44,7 +51,7 @@ const Home = () => {
 
   useEffect(() => {
     let query = search.toLowerCase();
-    let filtered_courses = courses.filter(course => {
+    let filtered_courses = courses.filter((course) => {
       return course.title.toLowerCase().match(query);
     });
     setAvailableCourses(filtered_courses);
@@ -55,11 +62,16 @@ const Home = () => {
   let [fontsLoaded] = useFonts({
     Raleway_600SemiBold,
     Raleway_700Bold,
-    Montserrat_300Light, 
-    Montserrat_400Regular
+    Montserrat_300Light,
+    Montserrat_400Regular,
   });
 
-  if (!fontsLoaded) return <View><Text>Carregando...</Text></View>
+  if (!fontsLoaded)
+    return (
+      <View>
+        <Text>Carregando...</Text>
+      </View>
+    );
 
   return (
     <View style={styles.container}>

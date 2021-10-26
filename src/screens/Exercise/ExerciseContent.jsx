@@ -98,7 +98,19 @@ const ExerciseContent = ({ question, lessonId, courseId }) => {
         <Text style={[styles.text_title, { marginTop: 0 }]}>
           Tarefa {question.id} - {question.title}
         </Text>
-        <Text style={styles.text_content}>{question.content}</Text>
+        <Text style={styles.text_content}>
+          {question.content.split(" ").map((word, key) => {
+            if (word.includes("_code")) {
+              return (
+                <Text style={styles.text_content} key={key}>
+                  {word.substring(0, word.indexOf("_code"))}
+                  {word.substring(word.indexOf("_code") + 5, word.length)}
+                </Text>
+              );
+            }
+            return `${word} `;
+          })}
+        </Text>
         {question.options.map((item, key) => (
           <Button
             key={key}

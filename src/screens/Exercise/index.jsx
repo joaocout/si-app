@@ -62,6 +62,51 @@ const exercises = {
     courseId: 1,
     lessonId: 1,
   },
+  3: {
+    title: "Introdução à linguagem Python",
+    contents: [
+      {
+        id: 1,
+        type: "true_false",
+        title: "Variáveis",
+        content:
+          "Uma variável tem um nome específico, e é diferenciado por maiúsculas e minúsculas.",
+        answer: true,
+      },
+      {
+        id: 2,
+        type: "true_false",
+        title: "Tipos",
+        content:
+          "Variáveis no Python podem representar qualquer tipo entre números inteiro, números racionais, letras, frases, e booleanos",
+        answer: true,
+      },
+      {
+        id: 3,
+        type: "multiple_choice", // verdadeiro ou falso
+        title: "Tipos",
+        content:
+          "A seguinte operação resulta em... \n\n_codea='1'\n\nb='23'\n\nprint(a+b)",
+        options: [
+          {
+            text: "123",
+            correct: true,
+          },
+          {
+            text: "24",
+            correct: false,
+          },
+          {
+            text: "33",
+            correct: false,
+          },
+        ],
+      },
+    ],
+    nextLesson: undefined,
+    courseId: 1,
+    lessonId: 1,
+  },
 };
 
 const Exercise = ({ route, navigation }) => {
