@@ -10,7 +10,7 @@ const CourseCard = ({ course }) => {
 
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate("Course")}
+      onPress={() => navigation.navigate("Course", { course })}
       style={styles.container}
     >
       <Text style={styles.title}>

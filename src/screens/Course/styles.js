@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
 
 import colors from "../../shared/colors";
-import sharedStyles from "../../shared/styles";
 
 const styles = StyleSheet.create({
   container: {
@@ -16,9 +15,20 @@ const styles = StyleSheet.create({
     left: 32,
   },
 
-  title: sharedStyles.screenTitle,
+  title: {
+    fontSize: 28,
+    fontWeight: "700",
+    color: colors.purple,
+    marginTop: 60,
+  },
 
-  subtitile: { ...sharedStyles.screenSubtitle, marginBottom: 46 },
+  subtitile: {
+    marginTop: 16,
+    fontSize: 14,
+    fontWeight: "300",
+    color: colors.purple,
+    marginBottom: 46,
+  },
 
   list: {
     backgroundColor: "white",
