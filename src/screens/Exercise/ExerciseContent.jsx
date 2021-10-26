@@ -98,7 +98,7 @@ const ExerciseContent = ({ question }) => {
                 }
             }
             setInputColors(tmp);
-            if (count_correct == question.answer.length) {
+            if (count_correct == question.answers.length) {
                 setAnswer(1); // correto
             } else {
                 setAnswer(0); // incorreto

@@ -1,8 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../shared/colors";
 
-import sharedStyles from "../../shared/styles";
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -10,9 +8,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
   },
 
-  title: sharedStyles.screenTitle,
+  title: {
+    fontSize: 28,
+    fontWeight: "700",
+    color: colors.purple,
+    marginTop: 60,
+  },
 
-  subtitle: sharedStyles.screenSubtitle,
+  subtitle: {
+    marginTop: 16,
+    fontSize: 14,
+    fontWeight: "300",
+    color: colors.purple,
+  },
 
   searchBoxContainer: {
     marginVertical: 16,

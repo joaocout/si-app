@@ -33,9 +33,6 @@ const Course = ({
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => goBack()} style={styles.backButton}>
-        <AntDesign name="arrowleft" color={colors.purple} size={24} />
-      </TouchableOpacity>
       <Text style={styles.title}>{course.title}</Text>
       <Text style={styles.subtitile}>{course.description}</Text>
       <FlatList

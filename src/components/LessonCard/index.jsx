@@ -6,11 +6,14 @@ import { useNavigation } from "@react-navigation/native";
 import colors from "../../shared/colors";
 import styles from "./styles";
 
-
 const LessonCard = ({ lesson }) => {
   const navigation = useNavigation();
+
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Lesson', { id: lesson.id})} style={styles.container}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("Lesson", { id: lesson.id })}
+      style={styles.container}
+    >
       <Text style={styles.lessonNumber}>
         {lesson.id < 10 ? `0${lesson.id}` : lesson.id}
       </Text>
@@ -28,6 +31,6 @@ const LessonCard = ({ lesson }) => {
       />
     </TouchableOpacity>
   );
-}
+};
 
 export default LessonCard;
