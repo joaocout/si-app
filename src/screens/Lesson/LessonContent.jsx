@@ -1,5 +1,7 @@
+import { Link } from "@react-navigation/native";
 import React from "react";
-import { View, Text, Linking } from "react-native";
+import { View, Text, Linking, Image } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import colors from "../../shared/colors";
 
 import styles from "./styles";
@@ -27,26 +29,19 @@ const LessonContent = ({ lesson }) => {
               </Text>
             );
           }
-          if (word.includes("_link")) {
-            return (
-              <Text key={key}>
-                {word.substring(0, word.indexOf("_link"))}
-                <Text
-                  style={{ color: colors.blue }}
-                  onPress={() =>
-                    Linking.openURL(
-                      word.substring(word.indexOf("_link") + 5, word.length)
-                    )
-                  }
-                >
-                  {word.substring(word.indexOf("_link") + 5, word.length)}
-                </Text>
-              </Text>
-            );
-          }
           return `${word} `;
         })}
       </Text>
+      {lesson.videoLink ? (
+        <TouchableOpacity onPress={() => Linking.openURL(lesson.videoLink)}>
+          <Image
+            style={{ width: 347, height: 191 }}
+            source={require("../../../assets/video.png")}
+          />
+        </TouchableOpacity>
+      ) : (
+        <View />
+      )}
     </View>
   );
 };

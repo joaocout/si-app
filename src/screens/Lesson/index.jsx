@@ -50,7 +50,8 @@ Bons exemplos de algoritmos no dia a dia são: \n\
         id: 1,
         title: "Variáveis e Tipos",
         content:
-          "Introdução aos tipos de variáveis no Python, como são declaradas e utilizadas.\n\nDuração do vídeo: 3:19\n\n_linkhttps://www.youtube.com/watch?v=OH86oLzVzzw",
+          "Introdução aos tipos de variáveis no Python, como são declaradas e utilizadas.\n\nDuração do vídeo: 3:19",
+        videoLink: "https://www.youtube.com/watch?v=OH86oLzVzzw",
       },
     ],
     exercise: 3,
