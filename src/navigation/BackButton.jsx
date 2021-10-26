@@ -4,7 +4,7 @@ import { View, StyleSheet, Image } from "react-native";
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1,
+    //flex: 1,
     flexDirection: "row",
     // justifyContent: 'start',
     backgroundColor: "transparent",

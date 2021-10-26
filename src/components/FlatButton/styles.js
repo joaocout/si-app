@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     
     text: {
         flex: 1,
-        fontFamily: 'Raleway_600SemiBold',
+        //fontFamily: 'Raleway_600SemiBold',
         fontSize: 18,
         textAlign: 'center',
         color: 'white',

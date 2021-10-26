@@ -17,15 +17,15 @@ const header = ({ navigation, route, options, back }) => {
 
 const Routes = () => (
     <Stack.Navigator screenOptions={{
-        headerShown: false,
+        //headerShown: false,
         headerTransparent: true, 
         header: header,
     }}>
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Lesson" component={Lesson} initialParams={{ id: 1 }} />
         <Stack.Screen name="Exercise" component={Exercise} initialParams={{ id: 1 }} />
-        <Stack.Screen name="LessonFinish" component={LessonFinish} />
-        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Course" component={Course} />
+        <Stack.Screen name="LessonFinish" component={LessonFinish} />
     </Stack.Navigator>
 );
 

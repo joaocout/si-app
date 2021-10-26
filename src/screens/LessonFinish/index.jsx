@@ -50,7 +50,7 @@ const LessonFinish = ({ route, navigation }) => {
                 </View>
             </View>
             {/* <FlatButton text="Voltar para o curso" onPress={() => navigation.navigate('Home')}/> */}
-            <FlatButton text="Voltar para o curso" onPress={() => navigation.popToTop()}/>
+            <FlatButton text="Voltar para os cursos" onPress={() => navigation.popToTop() }/>
         </View>
     );
 };
