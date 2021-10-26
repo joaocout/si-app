@@ -105,7 +105,7 @@ const exercises = {
     ],
     nextLesson: undefined,
     courseId: 1,
-    lessonId: 1,
+    lessonId: 3,
   },
 };
 

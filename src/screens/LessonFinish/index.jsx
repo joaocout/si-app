@@ -78,11 +78,7 @@ const LessonFinish = ({ route, navigation }) => {
       <FlatButton
         text="Voltar para os cursos"
         onPress={() =>
-          navigation.dispatch(
-            CommonActions.reset({
-              routes: [{ name: "Home" }],
-            })
-          )
+          navigation.popToTop()
         }
       />
     </View>
