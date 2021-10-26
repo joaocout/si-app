@@ -9,17 +9,17 @@ import FlatButton from "../../components/FlatButton";
 import LessonContent from "./LessonContent";
 
 const lessons = {
-    "1": {
+    1: {
         title: "Representação de Algoritmos",
         contents: [
             {
-                id: 0,
+                id: 1,
                 title: "Lógica",
                 content: "A lógica relaciona-se com a razão, investiga a correção do pensamento/raciocínio.\n\n\
 No nosso caso, usaremos a lógica, tanto a matemática como a de programação, para os ajudar a compreender, modelar e propor soluções viáveis para problemas computacionais",
             },
             {
-                id: 1,
+                id: 2,
                 title: "Algoritmo",
                 content: "Um algoritmo é uma sequência finita de passos para realizar uma tarefa ou solucionar um problema. \n\n\
 Esses passos serão definidos a partir das sequências lógicas desenvolvidas para atingir algum objetivo, e são ordenados convenientemente.\n\n\
@@ -31,7 +31,8 @@ Bons exemplos de algoritmos no dia a dia são:\n\
 - Instruções para uso de medicamentos.",
             }
         ],
-        exercise: 1
+        exercise: 1,
+        courseId: 1
     }
 }
 
@@ -54,13 +55,29 @@ const Lesson = ({ route, navigation }) => {
             </View>
             <View style={styles.container}>
                 <FlatList
-                    style={{paddingHorizontal: 32}}
+                    style={{paddingHorizontal: 32, paddingBottom: 20}}
                     data={lessons[id].contents}
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => <LessonContent lesson={item} />}
                 />
             </View>
-            <FlatButton text="Próximo" onPress={() => navigation.navigate('Exercise', { id: lessons[id].exercise })}/>
+            {lessons[id].exercise == undefined ?
+                <FlatButton 
+                    text="Finalizar" 
+                    onPress={() => navigation.navigate('LessonFinish', { 
+                        lesson_id: id, 
+                        lesson_title: lessons[id].title,
+                        courseId: lessons[id].courseId 
+                    })}
+                />
+                :
+                <FlatButton 
+                    text="Próximo" 
+                    onPress={() => navigation.navigate('Exercise', { 
+                        id: lessons[id].exercise 
+                    })}
+                />
+            }
         </View>
     );
 };

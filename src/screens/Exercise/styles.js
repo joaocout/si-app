@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
         flex: 3,
         backgroundColor: "white",
         paddingTop: 32,
-        borderRadius: 30,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
     },
 
     header: {
@@ -29,7 +30,8 @@ const styles = StyleSheet.create({
     text_title: {
         fontFamily: "Raleway_600SemiBold",
         fontSize: 18,
-        color: "black"
+        color: "black",
+        marginTop: 20
     },
 
     text_content: {
@@ -37,7 +39,13 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: "black",
         marginTop: 14,
-        marginBottom: 24
+        marginBottom: 10
+    },
+
+    hr: {
+        borderBottomColor: colors.lightGray, 
+        borderBottomWidth: 1,
+        marginVertical: 30
     }
 });
 

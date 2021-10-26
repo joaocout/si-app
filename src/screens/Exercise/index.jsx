@@ -7,20 +7,21 @@ import styles from "./styles";
 
 import FlatButton from "../../components/FlatButton";
 import ExerciseContent from "./ExerciseContent";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const exercises = {
-    "1": {
+    1: {
         title: "Representação de Algoritmos",
         contents: [
             {
                 id: 1,
-                type: 2,
+                type: "complete", // completar lacunas
                 title: "Algoritmos",
                 content: "t1",
             },
             {
                 id: 2,
-                type: 1, // multipla escolha
+                type: "multiple_choice", // multipla escolha
                 title: "Algoritmos",
                 content: "Qual das seguintes opções não representa um exemplo de algoritmo?",
                 options: [
@@ -37,9 +38,17 @@ const exercises = {
                         correct: true,
                     },
                 ]
+            },
+            {
+                id: 3,
+                type: "true_false", // verdadeiro ou falso
+                title: "Algoritmos",
+                content: "Algoritmos são importantes na programação.",
+                answer: true
             }
         ],
-        nextLesson: 2
+        nextLesson: undefined,
+        courseId: 1
     }
 }
 
@@ -53,7 +62,6 @@ const Exercise = ({ route, navigation }) => {
         Montserrat_600SemiBold
     });
 
-
     if (!fontsLoaded) return <View><Text>Carregando...</Text></View>
     return (
         <View style={styles.background}>
@@ -62,13 +70,29 @@ const Exercise = ({ route, navigation }) => {
             </View>
             <View style={styles.container}>
                 <FlatList
-                    style={{paddingHorizontal: 32}}
+                    style={{paddingHorizontal: 32, paddingBottom: 20}}
                     data={exercises[id].contents}
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => <ExerciseContent question={item} />}
                 />
             </View>
-            <FlatButton text="Finalizar" onPress={() => navigation.navigate('Home')}/>
+            {exercises[id].nextLesson == undefined ? // sem proxima licao
+                <FlatButton 
+                    text="Finalizar" 
+                    onPress={() => navigation.navigate('LessonFinish', { 
+                        lesson_id: id, 
+                        lesson_title: exercises[id].title,
+                        courseId: exercises[id].courseId
+                    })}
+                />
+                :
+                <FlatButton 
+                    text="Próximo" 
+                    onPress={() => navigation.navigate('Lesson', { 
+                        id: exercises[id].nextLesson 
+                    })}
+                />
+            }
         </View>
     );
 };

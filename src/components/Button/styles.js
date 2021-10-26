@@ -7,7 +7,9 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 13,
         alignItems: 'center',
-        borderRadius: 10
+        borderRadius: 10,
+        marginLeft: -7,
+        marginRight: -7
     },
 
     default: {
