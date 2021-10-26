@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 28,
-    fontWeight: "700",
+    fontFamily: 'Raleway_700Bold',
     color: colors.purple,
     marginTop: 60,
   },
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   subtitle: {
     marginTop: 16,
     fontSize: 14,
-    fontWeight: "300",
+    fontFamily: 'Montserrat_300Light',
     color: colors.purple,
   },
 
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     paddingLeft: 40,
     paddingRight: 12,
     fontSize: 14,
-    fontWeight: "400",
+    fontFamily: 'Montserrat_400Regular'
   },
 
   searchIcon: {

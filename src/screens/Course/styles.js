@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 28,
-    fontWeight: "700",
+    fontFamily: 'Raleway_700Bold',
     color: colors.purple,
     marginTop: 60,
   },
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   subtitile: {
     marginTop: 16,
     fontSize: 14,
-    fontWeight: "300",
+    fontFamily: 'Montserrat_300Light',
     color: colors.purple,
     marginBottom: 46,
   },
@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
   list: {
     backgroundColor: "white",
     borderTopRightRadius: 30,
-    marginHorizontal: -32,
     borderTopLeftRadius: 30,
+    marginHorizontal: -32,
   },
 
   listContent: {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
 
   headerText: {
     color: colors.purple,
-    fontWeight: "600",
+    fontFamily: 'Raleway_600SemiBold',
     fontSize: 18,
     marginTop: 32,
   },

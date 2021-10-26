@@ -8,6 +8,13 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     minHeight: 93,
     elevation: 5,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
     backgroundColor: "white",
     borderRadius: 10,
     marginTop: 24,
@@ -20,24 +27,26 @@ const styles = StyleSheet.create({
   textContainer: {
     marginHorizontal: 18,
     flex: 1,
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
   },
 
   lessonNumber: {
     alignSelf: "center",
     fontSize: 30,
-    fontWeight: "900",
+    fontFamily: 'Raleway_900Black',
     color: colors.gray,
   },
 
   title: {
     fontWeight: "600",
+    fontFamily: 'Raleway_600SemiBold',
     fontSize: 18,
     color: colors.purple,
   },
 
   subTitle: {
     fontWeight: "300",
+    fontFamily: 'Montserrat_300Light',
     fontSize: 14,
     color: colors.gray,
   },

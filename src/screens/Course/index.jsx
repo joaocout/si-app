@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { useFonts, Raleway_600SemiBold, Raleway_700Bold, Raleway_900Black } from "@expo-google-fonts/raleway";
+import { Montserrat_300Light, Montserrat_400Regular } from "@expo-google-fonts/montserrat";
 
 import styles from "./styles";
 import colors from "../../shared/colors";
@@ -30,6 +32,16 @@ const Course = ({
   const header = () => (
     <Text style={styles.headerText}>Tópicos disponíveis</Text>
   );
+
+  let [fontsLoaded] = useFonts({
+    Raleway_600SemiBold,
+    Raleway_700Bold,
+    Montserrat_300Light, 
+    Montserrat_400Regular,
+    Raleway_900Black
+  });
+
+  if (!fontsLoaded) return <View><Text>Carregando...</Text></View>
 
   return (
     <View style={styles.container}>
