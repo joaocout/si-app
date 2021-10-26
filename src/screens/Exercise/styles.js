@@ -39,14 +39,23 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: "black",
         marginTop: 14,
-        marginBottom: 10
+        marginBottom: 10,
     },
 
     hr: {
         borderBottomColor: colors.lightGray, 
         borderBottomWidth: 1,
         marginVertical: 30
-    }
+    },
+
+    input: {
+        //height: 20,
+        margin: 5,
+        padding: 5,
+        //border: '1px solid ' + colors.gray,
+        borderWidth: 1,
+        borderRadius: 4
+    },
 });
 
 export default styles;

@@ -4,13 +4,10 @@ import { View, StyleSheet, Image  } from "react-native";
 
 const styles = StyleSheet.create({
     wrapper: {
-        flex: 1,
         flexDirection: 'row',
-        justifyContent: 'start',
         backgroundColor: 'transparent',
     },
     back_button: {
-        flex: 1,
         backgroundColor: 'transparent',
         justifyContent: 'center',
         alignItems: 'center',
@@ -21,7 +18,6 @@ const styles = StyleSheet.create({
     image: {
         width: 22,
         height: 20,
-        
     }
 });
 

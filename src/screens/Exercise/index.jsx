@@ -17,7 +17,11 @@ const exercises = {
                 id: 1,
                 type: "complete", // completar lacunas
                 title: "Algoritmos",
-                content: "t1",
+                content: "Complete com a palavra que falta: \n\n\
+\"Um algoritmo é uma _ finita de passos.\"",
+                answers: [
+                    "sequência",
+                ]
             },
             {
                 id: 2,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, TextInput } from "react-native";
 
 import styles from "./styles";
 
@@ -55,6 +55,8 @@ const ExerciseContent = ({ question }) => {
             </View>
         );
     } else {
+        let content = question.content.split(" ");
+        let input_counter = -1;
         return (
             <View>
                 { question.id != 1 ? <View style={styles.hr}></View> : undefined }
@@ -62,8 +64,23 @@ const ExerciseContent = ({ question }) => {
                     Tarefa {question.id} - {question.title}
                 </Text>
                 <Text style={styles.text_content}>
-                    {question.content}
+                    {/* {question.content} */}
+                    {content.map((word, key) => {
+                        if (word == "_") {
+                            input_counter++;
+                            return <TextInput 
+                                        key={key} 
+                                        style={[styles.input, {width: question.answers[input_counter].length * 9}]}
+                                    />
+                        }
+                        return word + " ";
+                    })}
                 </Text>
+                <Button
+                    text="Enviar" 
+                    color={"default"}
+                    onPress={() => setAnswer(0)} 
+                />
             </View>
         );
     }

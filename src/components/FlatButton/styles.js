@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.purple,
         padding: 16,
-        alignItems: 'center'
+        alignItems: 'center',
+        textAlign: 'center'
     },
     
     text: {
