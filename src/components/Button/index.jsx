@@ -15,8 +15,8 @@ const Button = ({ text, onPress, style=undefined, color }) => {
     
     return (
         <TouchableOpacity
-            style={[style, styles.background, 
-                color == "default" ? styles.default : (color == "green" ? styles.green : styles.red)]}
+            style={[styles.background, 
+                color == "default" ? styles.default : (color == "green" ? styles.green : styles.red), style]}
             onPress={onPress}
         >
             <Text style={styles.text}>{text}</Text>

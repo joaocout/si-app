@@ -5,7 +5,6 @@ import {
   Raleway_700Bold,
   Raleway_600SemiBold_Italic,
 } from "@expo-google-fonts/raleway";
-import { CommonActions } from "@react-navigation/native";
 
 import FlatButton from "../../components/FlatButton";
 
@@ -45,8 +44,22 @@ const LessonFinish = ({ route, navigation }) => {
 
   if (!fontsLoaded)
     return (
-      <View>
-        <Text>Carregando...</Text>
+      <View style={{ flex: 1 }}>
+        <View style={styles.background}>
+          <View style={styles.centered}>
+            <Text style={styles.text}>Parabéns!</Text>
+            <Text style={styles.text}>Você finalizou o tópico</Text>
+            <Text>{"\n"}</Text>
+            <Text style={styles.lesson_title}>
+              {lesson_id}. {lesson_title}
+            </Text>
+          </View>
+        </View>
+        {/* <FlatButton text="Voltar para o curso" onPress={() => navigation.navigate('Home')}/> */}
+        <FlatButton
+          text="Voltar para os cursos"
+          onPress={() => navigation.popToTop()}
+        />
       </View>
     );
   return (

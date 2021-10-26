@@ -13,7 +13,9 @@ const reducer = (prevState, action) => {
         }
         // verificando se já existe uma entrada em lições completadas, para o número buscado
         if (newState[action.course].completed[action.lesson]) {
-          newState[action.course].completed[action.lesson] += 1;
+          // verificando se nao é maior que o maximo
+          if(newState[action.course].completed[action.lesson] < newState[action.course].total[action.lesson])
+            newState[action.course].completed[action.lesson] += 1;
         } else {
           newState[action.course].completed[action.lesson] = 1;
         }
@@ -28,19 +30,19 @@ const reducer = (prevState, action) => {
 const initialState = {
   1: {
     completed: {1: 0, 2: 0, 3: 0, 4: 0},
-    total: {1: 3, 2: 10, 3: 10,4: 10},
+    total: {1: 3, 2: 3, 3: 3,4: 2},
   },
   2: {
     completed: {1: 0, 2: 0, 3: 0, 4: 0},
-    total: {1: 3, 2: 10, 3: 10,4: 10},
+    total: {1: 3, 2: 3, 3: 3,4: 3},
   },
   3: {
     completed: {1: 0, 2: 0, 3: 0, 4: 0},
-    total: {1: 3, 2: 10, 3: 10,4: 10},
+    total: {1: 3, 2: 3, 3: 3,4: 3},
   },
   4: {
     completed: {1: 0, 2: 0, 3: 0, 4: 0},
-    total: {1: 3, 2: 10, 3: 10,4: 10},
+    total: {1: 3, 2: 3, 3: 3,4: 3},
   },
 };
 

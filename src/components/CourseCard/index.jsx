@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useIsFocused  } from "@react-navigation/native";
 
 import styles from "./styles";
 
@@ -44,9 +44,10 @@ const CourseCard = ({ course }) => {
     width: "100%"
   });
 
+  const isFocused = useIsFocused();
+
   useEffect(() => {
     const { progress_percent, progress_sum, total_sum } = calc_progress(state[course.id]);
-
 
     if(course.prerequisites.length > 0) {
       let brek = false;
@@ -68,7 +69,7 @@ const CourseCard = ({ course }) => {
     if(progress_percent > 0 && progress_percent < 100) {
       setProgress({
         enabled: true,
-        text: "Em progresso - " + progress_sum + "/" + total_sum + " tópicos.",
+        text: "Em progresso - " + progress_sum + "/" + total_sum + " tarefas.",
         color: "bottomBox_green",
         width: progress_percent + "%"
       })
@@ -80,7 +81,7 @@ const CourseCard = ({ course }) => {
         width: "100%"
       });
     }
-  }, []);
+  }, [state, isFocused]);
 
   return (
     <TouchableOpacity
