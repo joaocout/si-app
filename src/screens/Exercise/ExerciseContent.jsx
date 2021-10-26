@@ -42,16 +42,16 @@ const ExerciseContent = ({ question, lessonId, courseId }) => {
       ) {
         dispatch({
           type: "addCompleted",
-          lesson: lessonId + 1,
-          course: courseId + 1,
+          lesson: lessonId,
+          course: courseId,
         });
       }
     } else if (question.type === "complete") {
       if (answer === 1) {
         dispatch({
           type: "addCompleted",
-          lesson: lessonId + 1,
-          course: courseId + 1,
+          lesson: lessonId,
+          course: courseId,
         });
       }
     } else if (question.type === "multiple_choice") {
