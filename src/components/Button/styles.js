@@ -8,8 +8,6 @@ const styles = StyleSheet.create({
         padding: 13,
         alignItems: 'center',
         borderRadius: 10,
-        marginLeft: -7,
-        marginRight: -7
     },
 
     default: {

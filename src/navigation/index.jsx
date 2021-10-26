@@ -11,6 +11,10 @@ import BackButton from "./BackButton";
 
 const Stack = createNativeStackNavigator();
 
+const header = ({ navigation, route, options, back }) => {
+  return <BackButton onPress={navigation.goBack} visible={back} />;
+};
+
 const Routes = () => (
   <Stack.Navigator
     screenOptions={{

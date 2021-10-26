@@ -15,19 +15,19 @@ const lessons = {
             {
                 id: 1,
                 title: "Lógica",
-                content: "A lógica relaciona-se com a razão, investiga a correção do pensamento/raciocínio.\n\n\
-No nosso caso, usaremos a lógica, tanto a matemática como a de programação, para os ajudar a compreender, modelar e propor soluções viáveis para problemas computacionais",
+                content: "A lógica relaciona-se com a *razão, investiga a correção do pensamento/raciocínio. \n\n\
+No nosso caso, usaremos a lógica, tanto a matemática como a de programação, para os ajudar a *compreender, *modelar *e *propor *soluções viáveis para problemas computacionais",
             },
             {
                 id: 2,
                 title: "Algoritmo",
-                content: "Um algoritmo é uma sequência finita de passos para realizar uma tarefa ou solucionar um problema. \n\n\
-Esses passos serão definidos a partir das sequências lógicas desenvolvidas para atingir algum objetivo, e são ordenados convenientemente.\n\n\
-A ordem dos passos é muito importante.\n\n\
-Mudando a ordem dos passos alteramos um algoritmo.\n\n\
-Bons exemplos de algoritmos no dia a dia são:\n\
-- Receitas culinárias;\n\
-- Manuais de instruções de montagem;\n\
+                content: "Um algoritmo é uma *sequência *finita de passos para realizar uma tarefa ou solucionar um problema. \n\n\
+Esses passos serão definidos a partir das *sequências *lógicas desenvolvidas para atingir algum objetivo, e são ordenados convenientemente. \n\n\
+A *ordem dos passos é *muito *importante. \n\n\
+Mudando a ordem dos passos alteramos um algoritmo. \n\n\
+Bons exemplos de algoritmos no dia a dia são: \n\
+- Receitas culinárias; \n\
+- Manuais de instruções de montagem; \n\
 - Instruções para uso de medicamentos.",
             }
         ],

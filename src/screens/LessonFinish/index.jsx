@@ -38,6 +38,7 @@ const LessonFinish = ({ route, navigation }) => {
         Raleway_600SemiBold_Italic
     });
 
+    if (!fontsLoaded) return <View><Text>Carregando...</Text></View>
     return (
         <View style={{flex: 1}}>
             <View style={styles.background}>
