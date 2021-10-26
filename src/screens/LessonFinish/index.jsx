@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useFonts, Raleway_700Bold, Raleway_600SemiBold_Italic } from "@expo-google-fonts/raleway";
-import { CommonActions } from '@react-navigation/native';
 
 import FlatButton from "../../components/FlatButton";
 
@@ -51,14 +50,7 @@ const LessonFinish = ({ route, navigation }) => {
                 </View>
             </View>
             {/* <FlatButton text="Voltar para o curso" onPress={() => navigation.navigate('Home')}/> */}
-            <FlatButton text="Voltar para os cursos" onPress={() => navigation.dispatch(
-                CommonActions.reset({
-                    index: 0,
-                    routes: [
-                        { name: 'Home' }
-                    ]
-                })
-            ) }/>
+            <FlatButton text="Voltar para os cursos" onPress={() => navigation.popToTop()}/>
         </View>
     );
 };

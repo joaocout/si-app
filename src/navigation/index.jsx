@@ -8,6 +8,7 @@ import Course from "../screens/Course";
 import LessonFinish from "../screens/LessonFinish";
 
 import BackButton from "./BackButton";
+import LandingPage from "../screens/LandingPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ const Routes = () => (
       },
     }}
   >
+    <Stack.Screen name="LandingPage" component={LandingPage} />
     <Stack.Screen name="Home" component={Home} />
     <Stack.Screen name="Lesson" component={Lesson} />
     <Stack.Screen name="Exercise" component={Exercise} />

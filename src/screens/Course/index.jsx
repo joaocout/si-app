@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { View, Text, FlatList } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { useFonts, Raleway_600SemiBold, Raleway_700Bold, Raleway_900Black } from "@expo-google-fonts/raleway";
 import { Montserrat_300Light, Montserrat_400Regular } from "@expo-google-fonts/montserrat";
+import { useIsFocused  } from "@react-navigation/native";
 
 import styles from "./styles";
 
 import LessonCard from "../../components/LessonCard";
 import { AppContext } from "../../shared/state";
 
-const data = [
+const data_default = [
   {
     id: 1, // corresponde ao curso com id 1
     lessons: [
@@ -26,6 +27,23 @@ const Course = ({
     params: { course },
   },
 }) => {
+
+  const [state, dispatch] = useContext(AppContext);
+
+  const isFocused = useIsFocused();
+
+  const [data, setData] = useState(data_default);
+
+  useEffect(() => {
+    const { completed, total } = state[course.id];
+    let data_tmp = [...data];
+    for(let i=1;i<=Object.keys(completed).length;i++) {
+      data_tmp[course.id-1].lessons[i-1].completed = completed[i];
+      data_tmp[course.id-1].lessons[i-1].total = total[i];
+    }
+    setData(data_tmp);
+  }, [state, isFocused]);
+
   const renderLesson = ({ item }) => <LessonCard lesson={item} />;
 
   const header = () => (
