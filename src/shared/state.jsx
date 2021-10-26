@@ -13,8 +13,20 @@ const reducer = (state, action) => {
 // formato do estado inicial
 const initialState = {
   1: {
-    completed: [],
-    total: [],
+    completed: {1: 3, 2: 0, 3: 0, 4: 0},
+    total: {1: 3, 2: 10, 3: 10,4: 10},
+  },
+  2: {
+    completed: {1: 0, 2: 0, 3: 0, 4: 0},
+    total: {1: 3, 2: 10, 3: 10,4: 10},
+  },
+  3: {
+    completed: {1: 0, 2: 0, 3: 0, 4: 0},
+    total: {1: 3, 2: 10, 3: 10,4: 10},
+  },
+  4: {
+    completed: {1: 0, 2: 0, 3: 0, 4: 0},
+    total: {1: 3, 2: 10, 3: 10,4: 10},
   },
 };
 
