@@ -27,8 +27,10 @@ import { AppContext } from "../../shared/state";
 //         },
 //     ]
 // },
-const ExerciseContent = ({ question }) => {
+const ExerciseContent = ({ question, lessonId, courseId }) => {
   const [answer, setAnswer] = useState(-1);
+
+  const [correct, setCorrect] = useState(false);
 
   const [state, dispatch] = useContext(AppContext);
 
@@ -38,17 +40,30 @@ const ExerciseContent = ({ question }) => {
         (answer === 0 && question.answer) ||
         (answer === 1 && !question.answer)
       ) {
-        dispatch({ type: "addCompleted" });
+        dispatch({
+          type: "addCompleted",
+          lesson: lessonId + 1,
+          course: courseId + 1,
+        });
       }
-    }
-    if (question.type === "complete") {
+    } else if (question.type === "complete") {
       if (answer === 1) {
-        dispatch({ type: "addCompleted" });
+        dispatch({
+          type: "addCompleted",
+          lesson: lessonId + 1,
+          course: courseId + 1,
+        });
+      }
+    } else if (question.type === "multiple_choice") {
+      if (answer !== -1 && question.options[answer].correct) {
+        dispatch({
+          type: "addCompleted",
+          lesson: lessonId,
+          course: courseId,
+        });
       }
     }
   }, [answer]);
-
-  console.log(state.completedExercises);
 
   if (question.type === "true_false") {
     return (
