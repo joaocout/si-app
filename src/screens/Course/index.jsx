@@ -1,9 +1,17 @@
 import React, { useContext, useState, useEffect } from "react";
 import { View, Text, FlatList } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { useFonts, Raleway_600SemiBold, Raleway_700Bold, Raleway_900Black } from "@expo-google-fonts/raleway";
-import { Montserrat_300Light, Montserrat_400Regular } from "@expo-google-fonts/montserrat";
-import { useIsFocused  } from "@react-navigation/native";
+import {
+  useFonts,
+  Raleway_600SemiBold,
+  Raleway_700Bold,
+  Raleway_900Black,
+} from "@expo-google-fonts/raleway";
+import {
+  Montserrat_300Light,
+  Montserrat_400Regular,
+} from "@expo-google-fonts/montserrat";
+import { useIsFocused } from "@react-navigation/native";
 
 import styles from "./styles";
 
@@ -27,7 +35,6 @@ const Course = ({
     params: { course },
   },
 }) => {
-
   const [state, dispatch] = useContext(AppContext);
 
   const isFocused = useIsFocused();
@@ -37,9 +44,11 @@ const Course = ({
   useEffect(() => {
     const { completed, total } = state[course.id];
     let data_tmp = [...data];
-    for(let i=1;i<=Object.keys(completed).length;i++) {
-      data_tmp[course.id-1].lessons[i-1].completed = completed[i];
-      data_tmp[course.id-1].lessons[i-1].total = total[i];
+    if (data[course.id - 1]) {
+      for (let i = 1; i <= Object.keys(completed).length; i++) {
+        data_tmp[course.id - 1].lessons[i - 1].completed = completed[i];
+        data_tmp[course.id - 1].lessons[i - 1].total = total[i];
+      }
     }
     setData(data_tmp);
   }, [state, isFocused]);
@@ -53,12 +62,17 @@ const Course = ({
   let [fontsLoaded] = useFonts({
     Raleway_600SemiBold,
     Raleway_700Bold,
-    Montserrat_300Light, 
+    Montserrat_300Light,
     Montserrat_400Regular,
-    Raleway_900Black
+    Raleway_900Black,
   });
 
-  if (!fontsLoaded) return <View><Text>Carregando...</Text></View>
+  if (!fontsLoaded)
+    return (
+      <View>
+        <Text>Carregando...</Text>
+      </View>
+    );
 
   return (
     <View style={styles.container}>

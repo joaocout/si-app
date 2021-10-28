@@ -38,7 +38,7 @@ const courses = [
   },
   {
     id: 4,
-    title: "Tópicos de Progração 1",
+    title: "Tópicos de Programação 1",
     description:
       "Modularização, Programação Orientada a Objetos, Design Patterns",
     prerequisites: [1, 2],

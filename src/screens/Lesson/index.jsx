@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { View, Text, FlatList } from "react-native";
 import {
   useFonts,
@@ -14,6 +14,7 @@ import styles from "./styles";
 
 import FlatButton from "../../components/FlatButton";
 import LessonContent from "./LessonContent";
+import { AppContext } from "../../shared/state";
 
 const lessons = {
   1: {
@@ -43,6 +44,10 @@ Bons exemplos de algoritmos no dia a dia são: \n\
     exercise: 1,
     courseId: 1,
   },
+  2: {
+    title: "Algoritmos Computacionais",
+    courseId: 1,
+  },
   3: {
     title: "Introdução à Linguagem Python",
     contents: [
@@ -57,12 +62,18 @@ Bons exemplos de algoritmos no dia a dia são: \n\
     exercise: 3,
     courseId: 1,
   },
+  4: {
+    title: "Estruturas Condicionais",
+    courseId: 1,
+  },
 };
 
 const Lesson = ({ route, navigation }) => {
-  let { id } = route.params;
+  const [state, dispatch] = useContext(AppContext);
 
-  let [fontsLoaded] = useFonts({
+  const { id } = route.params;
+
+  const [fontsLoaded] = useFonts({
     Raleway_600SemiBold,
     Raleway_700Bold,
     Montserrat_300Light,
@@ -79,27 +90,33 @@ const Lesson = ({ route, navigation }) => {
     <View style={styles.background}>
       <View style={styles.header}>
         <Text style={styles.header_title}>
-          {id}. {lessons[id].title}
+          {lessons[id] && `${id}. ${lessons[id].title}`}
         </Text>
       </View>
       <View style={styles.container}>
         <FlatList
           style={{ paddingHorizontal: 32, paddingBottom: 20 }}
-          data={lessons[id].contents}
+          data={lessons[id] && lessons[id].contents}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <LessonContent lesson={item} />}
         />
       </View>
-      {lessons[id].exercise == undefined ? (
+      {lessons[id]?.exercise == undefined ? (
         <FlatButton
           text="Finalizar"
-          onPress={() =>
+          onPress={() => {
+            if (!lessons[id].contents) {
+              const course = lessons[id].courseId;
+              for (let i = 0; i < state[course].total[id]; i++) {
+                dispatch({ type: "addCompleted", lesson: id, course });
+              }
+            }
             navigation.navigate("LessonFinish", {
               lesson_id: id,
               lesson_title: lessons[id].title,
               courseId: lessons[id].courseId,
-            })
-          }
+            });
+          }}
         />
       ) : (
         <FlatButton
