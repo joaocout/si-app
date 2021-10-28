@@ -65,6 +65,16 @@ const CourseCard = ({ course }) => {
           shouldUpdateBottomBox = true;
         }
       });
+      // setar o estado de volta ao inicial, caso prerequisitos sejam completos
+      !shouldUpdateBottomBox &&
+        setProgress({
+          enabled: true,
+          text: "Disponível",
+          color: "bottomBox_blue",
+          width: "100%",
+        });
+
+      // setando o estado do card, caso hajam prerequisitos
       shouldUpdateBottomBox &&
         setProgress({
           enabled: false,
